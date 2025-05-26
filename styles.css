@@ -23,9 +23,9 @@ body {
   color: var(--text-color);
   background: linear-gradient(
     135deg,
-    var(--gradient-start) 0%,
-    var(--gradient-end) 100%
-  );
+    #ffcccc 0%,
+    #ffffff 100%
+  ); /* Pink to White gradient */
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -53,6 +53,7 @@ body {
   height: auto; /* Adjust height for content */
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start; /* Align items to the left */
   text-align: left; /* Align text to the left */
   background: none; /* Remove gradient background */
