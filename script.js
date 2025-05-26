@@ -37,6 +37,7 @@ const animateOnScroll = () => {
     const elementBottom = element.getBoundingClientRect().bottom;
     const windowHeight = window.innerHeight;
 
+    // Only apply animation if the element is below the viewport initially
     if (elementTop < windowHeight * 0.8 && elementBottom > 0) {
       element.style.opacity = '1';
       element.style.transform = 'translateY(0)';
@@ -44,24 +45,11 @@ const animateOnScroll = () => {
   });
 };
 
-// Initialize animations
-document.addEventListener('DOMContentLoaded', () => {
-  // Set initial styles for animated elements
-  const animatedElements = document.querySelectorAll(
-    '.experience-card, .skills-card, .education-card',
-  );
-  animatedElements.forEach((element) => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(20px)';
-    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  });
+// Add scroll event listener
+window.addEventListener('scroll', animateOnScroll);
 
-  // Add scroll event listener
-  window.addEventListener('scroll', animateOnScroll);
-
-  // Trigger initial animation check
-  animateOnScroll();
-});
+// Initial check in case elements are already in view on load
+animateOnScroll();
 
 // Add active state to navigation links
 const updateActiveNavLink = () => {
