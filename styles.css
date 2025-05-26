@@ -23,9 +23,9 @@ body {
   color: var(--text-color);
   background: linear-gradient(
     135deg,
-    #ffcccc 0%,
+    #f8e5f8 0%,
     #ffffff 100%
-  ); /* Pink to White gradient */
+  ); /* Lighter Pink to White gradient */
   min-height: 100vh;
   display: flex;
   justify-content: center;
