@@ -42,6 +42,7 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   overflow: hidden; /* Clear floats and contain content */
+  position: relative; /* Set to relative for absolute positioning of the image */
 }
 
 /* Navigation */
@@ -52,20 +53,21 @@ body {
   height: auto; /* Adjust height for content */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start; /* Align items to the left */
+  text-align: left; /* Align text to the left */
   background: none; /* Remove gradient background */
   padding: 2rem 0; /* Adjust padding */
   margin-top: 0; /* Remove top margin */
   color: var(--primary-color);
   border-bottom: 1px solid #eee; /* Add a separator line */
   margin-bottom: 3rem; /* Add space below hero */
+  position: relative; /* Set to relative for potential future absolute positioning of hero content if needed, though not strictly necessary for image positioning relative to .cv-paper */
 }
 
 .hero-content {
   max-width: 600px; /* Limit hero content width */
-  margin: 0 auto; /* Center hero content */
+  margin: 0; /* Remove auto margin for centering */
+  text-align: left; /* Ensure text is left-aligned */
 }
 
 .hero h1 {
@@ -97,6 +99,19 @@ body {
 .social-links a:hover {
   color: var(--accent-color);
   transform: translateY(-3px);
+}
+
+.profile-img {
+  width: 150px; /* Adjust size as needed */
+  height: 150px; /* Ensure height is same as width for a perfect circle */
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border: 5px solid var(--white); /* Optional: Add a white border */
+  box-shadow: var(--card-shadow); /* Optional: Add a subtle shadow */
+  position: absolute; /* Position the image */
+  top: 20px; /* Adjust top position */
+  right: 40px; /* Adjust right position */
+  z-index: 10; /* Ensure image is above other content */
 }
 
 /* Sections */
@@ -327,10 +342,16 @@ section h2::after {
 
   .hero h1 {
     font-size: 2.8rem;
+    text-align: center; /* Center title on small screens if desired */
   }
 
   .hero h2 {
     font-size: 1.6rem;
+    text-align: center; /* Center subtitle on small screens if desired */
+  }
+
+  .hero-content {
+    text-align: center; /* Center hero content on small screens */
   }
 
   section {
@@ -360,5 +381,12 @@ section h2::after {
 
   #portfolio {
     padding: 2rem 0; /* Adjust padding */
+  }
+
+  .profile-img {
+    width: 100px; /* Adjust size for smaller screens */
+    height: 100px;
+    top: 10px; /* Adjust position for smaller screens */
+    right: 20px;
   }
 }
