@@ -26,31 +26,6 @@ if (contactForm) {
   });
 }
 
-// Add animation on scroll
-const animateOnScroll = () => {
-  const elements = document.querySelectorAll(
-    '.experience-card, .skills-card, .education-card',
-  );
-
-  elements.forEach((element) => {
-    const elementTop = element.getBoundingClientRect().top;
-    const elementBottom = element.getBoundingClientRect().bottom;
-    const windowHeight = window.innerHeight;
-
-    // Only apply animation if the element is below the viewport initially
-    if (elementTop < windowHeight * 0.8 && elementBottom > 0) {
-      element.style.opacity = '1';
-      element.style.transform = 'translateY(0)';
-    }
-  });
-};
-
-// Add scroll event listener
-window.addEventListener('scroll', animateOnScroll);
-
-// Initial check in case elements are already in view on load
-animateOnScroll();
-
 // Add active state to navigation links
 const updateActiveNavLink = () => {
   const sections = document.querySelectorAll('section');

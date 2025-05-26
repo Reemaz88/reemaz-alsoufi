@@ -102,9 +102,6 @@ body {
 /* Sections */
 section {
   padding: 3rem 0; /* Adjust padding for inside paper */
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 section h2 {
@@ -360,6 +357,45 @@ section h2::after {
   color: var(--text-color);
 }
 
+/* Portfolio section */
+#portfolio {
+  text-align: center;
+  padding: 3rem 0; /* Adjust padding for inside paper */
+}
+
+.portfolio-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.portfolio-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.btn-portfolio {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--secondary-color);
+}
+
+.btn-portfolio:hover {
+  background-color: #4a148c; /* Darker purple */
+  border-color: #4a148c;
+  transform: translateY(-2px);
+}
+
+.btn-portfolio i {
+  margin-left: 0.5rem;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   body {
@@ -410,5 +446,9 @@ section h2::after {
   .languages ul li {
     padding-left: 1.5rem;
     font-size: 0.95rem;
+  }
+
+  #portfolio {
+    padding: 2rem 0; /* Adjust padding */
   }
 }
