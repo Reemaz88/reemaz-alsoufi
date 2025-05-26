@@ -102,6 +102,10 @@ body {
 /* Sections */
 section {
   padding: 3rem 0; /* Adjust padding for inside paper */
+  display: block; /* Ensure sections are displayed as blocks */
+  opacity: 1; /* Explicitly set opacity to ensure visibility */
+  transform: none; /* Ensure no transform is hiding the element */
+  transition: none; /* Remove any transition that might be in progress */
 }
 
 section h2 {
@@ -131,6 +135,7 @@ section h2::after {
   background: none; /* Remove background */
   padding: 0; /* Remove padding */
   box-shadow: none; /* Remove box shadow */
+  display: block; /* Ensure content is displayed as block */
 }
 
 .about-content p {
@@ -267,105 +272,17 @@ section h2::after {
   font-size: 1rem;
 }
 
-/* Contact section */
-.contact-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem; /* Adjust gap */
-  max-width: 100%; /* Allow content to take full width of paper padding */
-  margin: 0 auto;
-}
-
-.contact-info {
-  background: var(--light-bg); /* Use light background for info */
-  padding: 1.5rem; /* Adjust padding */
-  border-radius: 8px;
-  box-shadow: var(--card-shadow);
-}
-
-.contact-info p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.contact-info i {
-  color: var(--accent-color);
-  margin-right: 0.6rem;
-}
-
-.contact-info a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contact-info a:hover {
-  color: var(--accent-color);
-}
-
-#contact-form {
-  background: var(--light-bg); /* Use light background for form */
-  padding: 2rem; /* Adjust padding */
-  border-radius: 8px;
-  box-shadow: var(--card-shadow);
-}
-
-#contact-form input,
-#contact-form textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-#contact-form input:focus,
-#contact-form textarea:focus {
-  outline: none;
-  border-color: var(--accent-color);
-}
-
-#contact-form textarea {
-  min-height: 150px; /* Adjust min-height */
-  resize: vertical;
-}
-
-#contact-form button {
-  width: 100%;
-  padding: 1rem;
-  background-color: var(--secondary-color);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-#contact-form button:hover {
-  background-color: #4a148c; /* Darker purple */
-  transform: translateY(-2px);
-}
-
-/* Copyright text */
-.copyright {
-  text-align: center;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  color: var(--text-color);
-}
-
 /* Portfolio section */
 #portfolio {
   text-align: center;
   padding: 3rem 0; /* Adjust padding for inside paper */
+  display: block; /* Ensure section is displayed as block */
 }
 
 .portfolio-content {
   max-width: 800px;
   margin: 0 auto;
+  display: block; /* Ensure content is displayed as block */
 }
 
 .portfolio-content p {
@@ -425,20 +342,13 @@ section h2::after {
     margin-bottom: 2rem;
   }
 
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 1.5rem; /* Adjust gap */
-  }
-
   .experience-grid,
   .skills-grid {
     grid-template-columns: 1fr;
   }
 
   .about-content,
-  .education-card,
-  .contact-info,
-  #contact-form {
+  .education-card {
     padding: 1.5rem;
   }
 
