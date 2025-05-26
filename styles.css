@@ -25,58 +25,7 @@ body {
 }
 
 /* Navigation */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 5%;
-  background-color: var(--white);
-  box-shadow: var(--card-shadow);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--secondary-color);
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: var(--primary-color);
-  padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
-  transition: color 0.3s ease;
-  position: relative;
-}
-
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 50%;
-  background-color: var(--accent-color);
-  transition: all 0.3s ease;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-  left: 0;
-}
-
-nav ul li a:hover {
-  color: var(--accent-color);
-}
+/* Removed navigation styles */
 
 /* Hero section */
 .hero {
@@ -92,7 +41,8 @@ nav ul li a:hover {
     var(--gradient-end) 100%
   );
   padding: 2rem;
-  margin-top: 60px;
+  /* Removed margin-top as navigation is removed */
+  /* margin-top: 60px; */
   color: var(--primary-color);
 }
 
@@ -361,7 +311,8 @@ footer {
 
 /* Responsive design */
 @media (max-width: 768px) {
-  nav {
+  /* Removed responsive navigation styles */
+  /* nav {
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem;
@@ -374,7 +325,7 @@ footer {
 
   nav ul li {
     margin: 0.2rem 0;
-  }
+  } */
 
   .hero h1 {
     font-size: 3rem;
