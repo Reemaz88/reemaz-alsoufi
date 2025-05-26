@@ -21,21 +21,68 @@ if (contactForm) {
     console.log('Form submitted:', data);
 
     // Show success message
-    alert('Thank you for your message! We will get back to you soon.');
+    alert('Thank you for your message! I will get back to you soon.');
     this.reset();
   });
 }
 
 // Add animation on scroll
-window.addEventListener('scroll', function () {
-  const sections = document.querySelectorAll('section');
-  sections.forEach((section) => {
-    const sectionTop = section.getBoundingClientRect().top;
+const animateOnScroll = () => {
+  const elements = document.querySelectorAll(
+    '.experience-card, .skills-card, .education-card',
+  );
+
+  elements.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+    const elementBottom = element.getBoundingClientRect().bottom;
     const windowHeight = window.innerHeight;
 
-    if (sectionTop < windowHeight * 0.75) {
-      section.style.opacity = '1';
-      section.style.transform = 'translateY(0)';
+    if (elementTop < windowHeight * 0.8 && elementBottom > 0) {
+      element.style.opacity = '1';
+      element.style.transform = 'translateY(0)';
     }
   });
+};
+
+// Initialize animations
+document.addEventListener('DOMContentLoaded', () => {
+  // Set initial styles for animated elements
+  const animatedElements = document.querySelectorAll(
+    '.experience-card, .skills-card, .education-card',
+  );
+  animatedElements.forEach((element) => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  });
+
+  // Add scroll event listener
+  window.addEventListener('scroll', animateOnScroll);
+
+  // Trigger initial animation check
+  animateOnScroll();
 });
+
+// Add active state to navigation links
+const updateActiveNavLink = () => {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  sections.forEach((section) => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const sectionHeight = section.getBoundingClientRect().height;
+    const windowHeight = window.innerHeight;
+
+    if (sectionTop < windowHeight * 0.5 && sectionTop > -sectionHeight) {
+      const id = section.getAttribute('id');
+      navLinks.forEach((link) => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${id}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+};
+
+window.addEventListener('scroll', updateActiveNavLink);
