@@ -9,6 +9,8 @@ document.querySelectorAll('nav a').forEach((anchor) => {
 
 // Removed Form submission handling
 
+// Removed Add animation on scroll logic
+
 // Add active state to navigation links
 const updateActiveNavLink = () => {
   const sections = document.querySelectorAll('section');
