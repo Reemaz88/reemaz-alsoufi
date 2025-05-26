@@ -9,10 +9,30 @@ document.querySelectorAll('nav a').forEach((anchor) => {
 
 // Removed Form submission handling
 
-// Removed Add animation on scroll logic
+// Add animation on scroll
+const animateOnScroll = () => {
+  const elements = document.querySelectorAll('.animate-on-scroll');
 
-// Add active state to navigation links
-const updateActiveNavLink = () => {
+  elements.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    // If the element is in the viewport
+    if (elementTop < windowHeight * 0.75) {
+      // Adjust 0.75 to control when the animation triggers
+      element.classList.add('animated');
+    }
+  });
+};
+
+// Add scroll event listener
+window.addEventListener('scroll', animateOnScroll);
+
+// Trigger initial check in case elements are already in view on load
+animateOnScroll();
+
+// Add active state to navigation links (removed as nav is removed)
+/* const updateActiveNavLink = () => {
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('nav a');
 
@@ -33,4 +53,4 @@ const updateActiveNavLink = () => {
   });
 };
 
-window.addEventListener('scroll', updateActiveNavLink);
+window.addEventListener('scroll', updateActiveNavLink); */
