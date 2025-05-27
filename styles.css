@@ -115,6 +115,29 @@ body {
   z-index: 10; /* Ensure image is above other content */
 }
 
+.btn-download-cv {
+  display: inline-block;
+  padding: 0.4rem 0.8rem; /* Smaller padding */
+  background-color: var(--accent-color); /* Use accent color for the button */
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.8rem; /* Smaller font size */
+  position: absolute; /* Position the button */
+  top: 30px; /* Adjust top position */
+  right: 40px; /* Adjust right position */
+  z-index: 10; /* Ensure button is above other content */
+  transition: background-color 0.3s ease;
+}
+
+.btn-download-cv i {
+  margin-left: 0.5rem; /* Add space between text and icon */
+}
+
+.btn-download-cv:hover {
+  background-color: #9c27b0; /* Darker accent color on hover */
+}
+
 /* Sections */
 section {
   padding: 3rem 0; /* Adjust padding for inside paper */
@@ -389,6 +412,13 @@ section h2::after {
     height: 100px;
     top: 10px; /* Adjust position for smaller screens */
     right: 20px;
+  }
+
+  .btn-download-cv {
+    top: 15px; /* Adjust position for smaller screens */
+    right: 15px;
+    padding: 0.3rem 0.6rem; /* Smaller padding for small screens */
+    font-size: 0.7rem; /* Smaller font size for small screens */
   }
 }
 
