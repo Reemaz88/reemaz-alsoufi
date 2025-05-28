@@ -76,6 +76,7 @@ body {
   margin-bottom: 0.5rem;
   color: var(--secondary-color);
   text-shadow: none; /* Remove text shadow */
+  margin-top: 50px; /* Add space above the title */
 }
 
 .hero h2 {
@@ -113,6 +114,30 @@ body {
   top: 20px; /* Adjust top position */
   right: 40px; /* Adjust right position */
   z-index: 10; /* Ensure image is above other content */
+  margin: 10px; /* Add margin around the picture */
+}
+
+.btn-download-cv {
+  display: inline-block;
+  padding: 0.4rem 0.8rem; /* Smaller padding */
+  background-color: var(--accent-color); /* Use accent color for the button */
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.8rem; /* Smaller font size */
+  position: absolute; /* Position the button */
+  top: 4px; /* Adjust top position */
+  right: 4px; /* Adjust right position */
+  z-index: 10; /* Ensure button is above other content */
+  transition: background-color 0.3s ease;
+}
+
+.btn-download-cv i {
+  margin-left: 0rem; /* Add space between text and icon */
+}
+
+.btn-download-cv:hover {
+  background-color: #9c27b0; /* Darker accent color on hover */
 }
 
 /* Sections */
@@ -125,7 +150,7 @@ section {
 }
 
 section h2 {
-  text-align: center;
+  /* text-align: center; */
   margin-bottom: 2.5rem;
   color: var(--secondary-color);
   font-size: 2.2rem;
@@ -133,7 +158,7 @@ section h2 {
   padding-bottom: 0.8rem;
 }
 
-section h2::after {
+/* section h2::after {
   content: '';
   display: block;
   width: 60px;
@@ -141,13 +166,13 @@ section h2::after {
   background: var(--accent-color);
   margin: 0.8rem auto 0;
   border-radius: 2px;
-}
+} */
 
 /* About section */
 .about-content {
   max-width: 100%; /* Allow content to take full width of paper padding */
   margin: 0 auto;
-  text-align: center;
+  /* text-align: center; */
   background: none; /* Remove background */
   padding: 0; /* Remove padding */
   box-shadow: none; /* Remove box shadow */
@@ -333,26 +358,28 @@ section h2::after {
 @media (max-width: 768px) {
   body {
     padding: 10px; /* Adjust body padding */
-    align-items: flex-start;
+    align-items: flex-start; /* Keep aligned to top */
   }
 
   .cv-paper {
     margin: 20px auto; /* Adjust paper margin */
-    padding: 20px; /* Adjust paper padding */
+    padding: 15px; /* Further reduced paper padding for smaller screens */
   }
 
   .hero h1 {
-    font-size: 2.8rem;
-    text-align: center; /* Center title on small screens if desired */
+    font-size: 2.2rem; /* Smaller font size for title */
+    text-align:left /* Center title on small screens if desired */
+    margin-top: 30px; /* Adjust space above title for small screens */
   }
 
   .hero h2 {
-    font-size: 1.6rem;
-    text-align: center; /* Center subtitle on small screens if desired */
+    font-size: 1.3rem; /* Smaller font size for subtitle */
   }
 
-  .hero-content {
-    text-align: center; /* Center hero content on small screens */
+  /* Adjust social links spacing if needed */
+  .social-links a {
+    margin: 0 0.5rem; /* Reduce margin between social icons */
+    font-size: 1.3rem; /* Adjust icon size */
   }
 
   section {
@@ -360,35 +387,165 @@ section h2::after {
   }
 
   section h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1.8rem; /* Smaller font size for section titles */
+    margin-bottom: 1.5rem; /* Adjust margin */
+    padding-bottom: 0.5rem; /* Adjust padding */
   }
 
-  .experience-grid,
-  .skills-grid {
-    grid-template-columns: 1fr;
+  section h2::after {
+    width: 50px; /* Smaller underline */
+    height: 2px; /* Thinner underline */
+    margin: 0.5rem auto 0; /* Adjust margin */
   }
 
-  .about-content,
-  .education-card {
-    padding: 1.5rem;
+  .about-content {
+    padding: 1rem 0; /* Adjust padding for about content */
+  }
+
+  .about-content p {
+    font-size: 0.95rem; /* Adjust paragraph font size */
+    margin-bottom: 1rem;
   }
 
   .summary ul li,
   .languages ul li {
-    padding-left: 1.5rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem; /* Adjust list item font size */
+    padding-left: 1.2rem; /* Adjust padding */
+  }
+
+  .summary ul li::before,
+  .languages ul li::before {
+    font-size: 0.6rem; /* Adjust icon size */
+  }
+
+  .languages {
+    margin-top: 1.5rem; /* Adjust margin */
+    padding-top: 1rem; /* Adjust padding */
+  }
+
+  .languages h3 {
+    margin-bottom: 1rem; /* Adjust margin */
+    font-size: 1.1rem; /* Adjust font size */
+  }
+
+  .experience-grid,
+  .skills-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    gap: 1rem; /* Reduce gap between stacked cards */
+  }
+
+  .experience-card,
+  .skills-card,
+  .education-card {
+    padding: 1rem; /* Adjust card padding */
+  }
+
+  .experience-card h3,
+  .skills-card h3 {
+    font-size: 1.1rem; /* Adjust card title font size */
+    margin-bottom: 0.4rem;
+  }
+
+  .experience-card .company {
+    font-size: 0.9rem; /* Adjust company font size */
+    margin-bottom: 0.3rem;
+  }
+
+  .experience-card .date,
+  .experience-card .location {
+    font-size: 0.75rem; /* Adjust date/location font size */
+    margin-bottom: 0.6rem;
+  }
+
+  .experience-card ul {
+    margin-top: 0.6rem;
+    padding-left: 1rem;
+  }
+
+  .experience-card ul li {
+    margin-bottom: 0.3rem;
+  }
+
+  .education-card {
+    margin: 1.5rem auto; /* Adjust margin */
+    padding: 1rem; /* Adjust padding */
+  }
+
+  .education-card h3 {
+    font-size: 1.1rem; /* Adjust font size */
+  }
+
+  .education-card p {
+    font-size: 0.95rem; /* Adjust font size */
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr; /* Stack contact info and form */
+    gap: 1.5rem; /* Adjust gap */
+  }
+
+  .contact-info,
+  #contact-form {
+    padding: 1.5rem; /* Adjust padding */
+  }
+
+  .contact-info p {
+    font-size: 0.95rem; /* Adjust font size */
+    margin-bottom: 0.8rem;
+  }
+
+  .contact-info i {
+    margin-right: 0.4rem; /* Adjust icon margin */
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    padding: 0.6rem; /* Adjust input padding */
+    margin-bottom: 0.8rem; /* Adjust input margin */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  #contact-form textarea {
+    min-height: 100px; /* Adjust min-height */
+  }
+
+  #contact-form button {
+    padding: 0.8rem; /* Adjust button padding */
+    font-size: 1rem; /* Adjust button font size */
   }
 
   #portfolio {
     padding: 2rem 0; /* Adjust padding */
   }
 
+  .portfolio-content p {
+    font-size: 0.95rem; /* Adjust font size */
+    margin-bottom: 1rem;
+  }
+
+  .btn-portfolio {
+    padding: 0.6rem 1rem; /* Adjust padding */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
   .profile-img {
-    width: 100px; /* Adjust size for smaller screens */
-    height: 100px;
-    top: 10px; /* Adjust position for smaller screens */
-    right: 20px;
+    width: 80px; /* Further reduce size for smaller screens */
+    height: 80px;
+    top: 10px; /* Adjust position */
+    right: 10px;
+    margin: 5px; /* Adjust margin for smaller screens */
+  }
+
+  .btn-download-cv {
+    top: 10px; /* Adjust position for small screens to avoid overlap */
+    right: 10px;
+    padding: 0.3rem; /* Keep padding consistent with icon only */
+    font-size: 0.9rem; /* Adjust icon size */
+  }
+
+  .copyright {
+    margin-top: 2rem; /* Adjust margin */
+    font-size: 0.8rem; /* Adjust font size */
   }
 }
 
