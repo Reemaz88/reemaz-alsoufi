@@ -215,7 +215,7 @@ section h2 {
 
 .summary ul li::before,
 .languages ul li::before {
-  content: "- "; /* Use a hyphen followed by a space */
+  content: '- '; /* Use a hyphen followed by a space */
   color: var(--text-color); /* Or another color if desired */
   position: absolute;
   left: 0;
@@ -223,19 +223,19 @@ section h2 {
 
 /* Experience and Skills Grid */
 .experience-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    max-width: 100%;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    max-width: 100%;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .experience-card,
@@ -288,7 +288,7 @@ section h2 {
 }
 
 .experience-card ul li::before {
-  content: "- "; /* Use a hyphen followed by a space */
+  content: '- '; /* Use a hyphen followed by a space */
   color: var(--text-color); /* Or another color if desired */
   position: absolute;
   left: 0;
@@ -296,65 +296,69 @@ section h2 {
 
 /* Skills section */
 .skills-card {
-    background: var(--light-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: var(--card-shadow);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
+  background: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 .skills-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 0;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    var(--accent-color),
+    var(--secondary-color)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
 }
 
 .skills-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
 .skills-card:hover::before {
-    opacity: 0.05;
+  opacity: 0.05;
 }
 
 .skills-card h3 {
-    position: relative;
-    z-index: 1;
-    transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
 }
 
 .skills-card:hover h3 {
-    transform: translateX(5px);
+  transform: translateX(5px);
 }
 
 .skills-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .skills-card ul li {
-    margin-bottom: 0.5rem;
-    padding-left: 15px;
-    position: relative;
-    font-size: 1rem;
+  margin-bottom: 0.5rem;
+  padding-left: 15px;
+  position: relative;
+  font-size: 1rem;
 }
 
 .skills-card ul li::before {
-    content: "- ";
-    color: var(--text-color);
-    position: absolute;
-    left: 0;
+  content: '- ';
+  color: var(--text-color);
+  position: absolute;
+  left: 0;
 }
 
 /* Education section */
@@ -376,108 +380,108 @@ section h2 {
 
 /* Portfolio section */
 #portfolio {
-    text-align: left;
-    padding: 3rem 0;
+  text-align: left;
+  padding: 3rem 0;
 }
 
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .portfolio-card {
-    background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease;
 }
 
 .portfolio-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .portfolio-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .portfolio-card h3 {
-    color: var(--secondary-color);
-    margin: 1rem;
-    font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin: 1rem;
+  font-size: 1.2rem;
 }
 
 .portfolio-card p {
-    color: var(--text-color);
-    margin: 0 1rem 1rem;
-    font-size: 0.9rem;
+  color: var(--text-color);
+  margin: 0 1rem 1rem;
+  font-size: 0.9rem;
 }
 
 .portfolio-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    position: relative;
-    z-index: 1;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .portfolio-links .btn-portfolio {
-    flex: 1;
-    text-align: center;
-    padding: 0.8rem 1.2rem;
-    font-size: 0.95rem;
-    background-color: var(--light-bg);
-    color: var(--secondary-color);
-    text-decoration: none;
-    border-radius: 6px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid var(--accent-color);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+  flex: 1;
+  text-align: center;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.95rem;
+  background-color: var(--light-bg);
+  color: var(--secondary-color);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid var(--accent-color);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .portfolio-links .btn-portfolio::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: var(--accent-color);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
-    z-index: -1;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--accent-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  z-index: -1;
 }
 
 .portfolio-links .btn-portfolio:hover {
-    color: var(--white);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    border-color: transparent;
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: transparent;
 }
 
 .portfolio-links .btn-portfolio:hover::before {
-    width: 300%;
-    height: 300%;
+  width: 300%;
+  height: 300%;
 }
 
 .portfolio-links .btn-portfolio i {
-    margin-left: 0.5rem;
-    font-size: 0.9rem;
-    transition: transform 0.3s ease;
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
 }
 
 .portfolio-links .btn-portfolio:hover i {
-    transform: translateX(3px);
+  transform: translateX(3px);
 }
 
 .btn-portfolio {
@@ -503,23 +507,23 @@ section h2 {
 }
 
 #portfolio .skills-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 #portfolio .skills-card ul li {
-    margin-bottom: 0.5rem;
-    padding-left: 15px;
-    position: relative;
-    font-size: 1rem;
+  margin-bottom: 0.5rem;
+  padding-left: 15px;
+  position: relative;
+  font-size: 1rem;
 }
 
 #portfolio .skills-card ul li::before {
-    content: "- ";
-    color: var(--text-color);
-    position: absolute;
-    left: 0;
+  content: '- ';
+  color: var(--text-color);
+  position: absolute;
+  left: 0;
 }
 
 /* Responsive design */
@@ -534,20 +538,43 @@ section h2 {
     padding: 15px; /* Further reduced paper padding for smaller screens */
   }
 
+  .hero {
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
   .hero h1 {
-    font-size: 2.2rem; /* Smaller font size for title */
-    text-align:left /* Center title on small screens if desired */
-    margin-top: 30px; /* Adjust space above title for small screens */
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
   .hero h2 {
-    font-size: 1.3rem; /* Smaller font size for subtitle */
+    font-size: 1.3rem;
+    text-align: center;
   }
 
-  /* Adjust social links spacing if needed */
-  .social-links a {
-    margin: 0 0.5rem; /* Reduce margin between social icons */
-    font-size: 1.3rem; /* Adjust icon size */
+  .hero p {
+    text-align: center;
+  }
+
+  .profile-img {
+    position: static;
+    width: 120px;
+    height: 120px;
+    margin: 1rem auto;
+    display: block;
+  }
+
+  .social-links {
+    text-align: center;
+    margin-top: 1rem;
   }
 
   section {
@@ -685,21 +712,6 @@ section h2 {
     font-size: 0.9rem; /* Adjust font size */
   }
 
-  .profile-img {
-    width: 80px; /* Further reduce size for smaller screens */
-    height: 80px;
-    top: 10px; /* Adjust position */
-    right: 10px;
-    margin: 5px; /* Adjust margin for smaller screens */
-  }
-
-  .btn-download-cv {
-    top: 10px; /* Adjust position for small screens to avoid overlap */
-    right: 10px;
-    padding: 0.3rem; /* Keep padding consistent with icon only */
-    font-size: 0.9rem; /* Adjust icon size */
-  }
-
   .copyright {
     margin-top: 2rem; /* Adjust margin */
     font-size: 0.8rem; /* Adjust font size */
@@ -708,7 +720,7 @@ section h2 {
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .skills-card:first-child {
     grid-column: auto;
   }
@@ -732,7 +744,6 @@ section h2 {
   }
 }
 
-
 /* Animation Styles */
 .animate-on-scroll {
   opacity: 0;
@@ -746,7 +757,7 @@ section h2 {
 }
 
 /* Make the Languages card span both columns */
-
-.skills-card:first-child {
-  grid-column: 1 ;
+.skills-card:last-child {
+  grid-column: 1 / -1;
+  width: 100%;
 }
